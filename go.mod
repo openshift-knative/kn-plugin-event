@@ -12,7 +12,6 @@ require (
 	github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2
 	github.com/prometheus/common v0.31.1 // indirect
 	github.com/spf13/cobra v1.2.1
-	github.com/stretchr/testify v1.7.0
 	github.com/thediveo/enumflag v0.10.0
 	github.com/wavesoftware/go-ensure v1.0.0
 	github.com/wavesoftware/go-magetasks v0.6.0
