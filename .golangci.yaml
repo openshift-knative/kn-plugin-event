@@ -33,6 +33,14 @@ issues:
     - path: _test\.go
       linters:
         - wrapcheck
+    - path: Magefile\.go
+      linters:
+        - gochecknoinits
+        - gochecknoglobals
+        - deadcode
+        - wrapcheck
+        - gomnd
+        - gosec
 
 linters-settings:
   gomoddirectives:

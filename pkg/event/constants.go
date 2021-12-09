@@ -18,7 +18,7 @@ var ErrUnexpected = errors.New("unexpected")
 
 // DefaultSource holds a default source of an event.
 func DefaultSource() string {
-	return fmt.Sprintf("%s/%s", metadata.PluginName, metadata.Version)
+	return fmt.Sprintf("%s/%s", metadata.PluginName, metadata.ResolveVersion())
 }
 
 // NewID creates a new ID for an event.

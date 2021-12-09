@@ -7,7 +7,8 @@ import (
 	"os"
 	"strings"
 
-	// mage:import
+	"github.com/magefile/mage/mg"
+	"github.com/magefile/mage/sh"
 	"github.com/wavesoftware/go-magetasks"
 	"github.com/wavesoftware/go-magetasks/config"
 	"github.com/wavesoftware/go-magetasks/pkg/artifact"
@@ -20,9 +21,42 @@ import (
 
 // Default target is set to binary.
 //goland:noinspection GoUnusedGlobalVariable
-var Default = magetasks.Build // nolint:deadcode,gochecknoglobals
+var Default = Build
 
-func init() { //nolint:gochecknoinits
+// TODO: Remove tasks definitions in favor of mage:import comment
+//       See: https://github.com/wavesoftware/go-magetasks/issues/29
+
+// Clean will clean project files.
+func Clean() {
+	mg.Deps(magetasks.Clean)
+}
+
+// Generate will generate Go code.
+func Generate() error {
+	return sh.RunV("go", "generate", "./...")
+}
+
+// Check will run all lints checks.
+func Check() {
+	mg.Deps(magetasks.Check)
+}
+
+// Test will execute regular unit tests.
+func Test() {
+	mg.Deps(Generate, magetasks.Test)
+}
+
+// Build will build project artifacts, binaries and images.
+func Build() {
+	mg.Deps(Generate, magetasks.Build)
+}
+
+// Publish will publish built artifacts to remote site.
+func Publish() {
+	mg.Deps(magetasks.Publish)
+}
+
+func init() {
 	sender := artifact.Image{
 		Metadata: config.Metadata{Name: "kn-event-sender"},
 		Architectures: []platform.Architecture{

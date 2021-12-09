@@ -1,6 +1,6 @@
-package metadata
+//go:generate go run knative.dev/kn-plugin-event/tools/builttime
 
-import "fmt"
+package metadata
 
 var (
 	// Image holds information about companion image reference.
@@ -8,17 +8,32 @@ var (
 	// ImageBasename holds a basename of a image, so the development reference
 	// could be built from it.
 	ImageBasename = "" //nolint:gochecknoglobals
+	// ImageBasenameSeparator holds a separator between image basename and name.
+	// nolint:gochecknoglobals
+	ImageBasenameSeparator = "/"
 )
 
 // ResolveImage will try to resolve the image reference from set values. If
 // Image is given it will be used, otherwise the ImageBasename and Version will
 // be used.
 func ResolveImage() string {
+	image := Image
 	//goland:noinspection GoBoolExpressions
-	if Image == "" {
-		return fmt.Sprintf("%s/kn-event-sender:%s", ImageBasename, Version)
+	if imageFromEnvironmentSet {
+		image = imageFromEnvironment
 	}
-	return Image
+	if image == "" {
+		name := "kn-event-sender"
+		return floatToRelease(ImageBasename, name, ImageBasenameSeparator,
+			ResolveVersion(), floatDirectionDown)
+	}
+	return image
+}
+
+// ImageOverriden check if image has been overridden on build time.
+func ImageOverriden() bool {
+	//goland:noinspection GoBoolExpressions
+	return imageFromEnvironmentSet
 }
 
 // ImagePath return a path to the image variable.

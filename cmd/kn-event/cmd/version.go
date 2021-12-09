@@ -30,7 +30,7 @@ func (v *versionCommand) command() *cobra.Command {
 func (v *versionCommand) run(cmd *cobra.Command, _ []string) error {
 	output, err := presentAs(cli.PluginVersionOutput{
 		Name:    metadata.PluginName,
-		Version: metadata.Version,
+		Version: metadata.ResolveVersion(),
 		Image:   metadata.ResolveImage(),
 	}, v.options.Output)
 	if err != nil {
