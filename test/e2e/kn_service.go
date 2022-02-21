@@ -15,13 +15,13 @@ import (
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	portedk8s "knative.dev/kn-plugin-event/test/ported/k8s"
 	"knative.dev/pkg/apis"
 	kubeclient "knative.dev/pkg/client/injection/kube/client"
 	"knative.dev/pkg/injection"
 	"knative.dev/pkg/kmeta"
 	"knative.dev/reconciler-test/pkg/environment"
 	"knative.dev/reconciler-test/pkg/feature"
-	"knative.dev/reconciler-test/pkg/k8s"
 	servingv1 "knative.dev/serving/pkg/apis/serving/v1"
 	servingv1clientset "knative.dev/serving/pkg/client/clientset/versioned/typed/serving/v1"
 )
@@ -147,7 +147,10 @@ func (wf watholaForwarder) deployKnService(ctx context.Context, t feature.T) {
 	}
 	ref := kmeta.ObjectReference(created)
 	env.Reference(ref)
-	if err = k8s.WaitForServiceReady(ctx, t, wf.name(), readyPath); err != nil {
+	// nolint:staticcheck
+	if err = portedk8s.WaitForServiceReady(ctx, wf.name(), portedk8s.ReadinessEndpoint{
+		Path: readyPath,
+	}); err != nil {
 		t.Fatal(errors.WithStack(err))
 	}
 }

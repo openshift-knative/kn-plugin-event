@@ -13,6 +13,7 @@ import (
 	"gotest.tools/v3/icmd"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"knative.dev/kn-plugin-event/test"
+	portedeventshub "knative.dev/kn-plugin-event/test/ported/eventshub"
 	kubeclient "knative.dev/pkg/client/injection/kube/client"
 	"knative.dev/pkg/logging"
 	"knative.dev/reconciler-test/pkg/environment"
@@ -29,6 +30,10 @@ func sendEventFeature(featureName string, opts sendEventOptions) *feature.Featur
 	ev.SetID(feature.MakeRandomK8sName("test-event"))
 
 	f.Setup("deploy sink", eventshub.Install(sinkName, eventshub.StartReceiver))
+
+	// TODO: remove this for 1.3+
+	f.Setup("wait for sink ready",
+		portedeventshub.WaitForSinkReady(sinkName)) // nolint:staticcheck
 
 	f.Alpha("Event").
 		Must("send", sendEvent(ev, opts.sink(sinkName))).
