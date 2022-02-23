@@ -7,10 +7,12 @@ require (
 	github.com/Azure/go-autorest/autorest/adal v0.9.10 // indirect
 	github.com/cloudevents/sdk-go/v2 v2.4.1
 	github.com/ghodss/yaml v1.0.0
+	github.com/go-logr/logr v1.2.2 // indirect
 	github.com/google/uuid v1.3.0
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/magefile/mage v1.11.0
 	github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2
+	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.2.1
 	github.com/thediveo/enumflag v0.10.0
 	github.com/wavesoftware/go-ensure v1.0.0
@@ -22,11 +24,11 @@ require (
 	k8s.io/apimachinery v0.22.3
 	k8s.io/client-go v0.21.4
 	knative.dev/client v0.28.0
-	knative.dev/eventing v0.28.0
+	knative.dev/eventing v0.28.4
 	knative.dev/hack v0.0.0-20211203062838-e11ac125e707
-	knative.dev/networking v0.0.0-20211209101835-8ef631418fc0
-	knative.dev/pkg v0.0.0-20211206113427-18589ac7627e
-	knative.dev/serving v0.28.0
+	knative.dev/pkg v0.0.0-20220222214539-0b8a9403de7e
+	knative.dev/reconciler-test v0.0.0-20211207070557-0d138a88867b
+	knative.dev/serving v0.28.4
 	sigs.k8s.io/yaml v1.3.0
 )
 

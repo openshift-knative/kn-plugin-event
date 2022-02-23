@@ -12,6 +12,5 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
-          # Optional: version of golangci-lint to use in form of v1.2 or 
-          # v1.2.3 or `latest` to use the latest version
-          version: latest
+          # Use same version as in https://github.com/knative-sandbox/kn-plugin-event/blob/main/.github/workflows/knative-style.yaml
+          version: v1.43
