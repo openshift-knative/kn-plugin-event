@@ -7,13 +7,13 @@ require (
 	github.com/Azure/go-autorest/autorest/adal v0.9.10 // indirect
 	github.com/cloudevents/sdk-go/v2 v2.4.1
 	github.com/ghodss/yaml v1.0.0
-	github.com/go-logr/logr v1.2.2 // indirect
+	github.com/google/go-containerregistry v0.8.1-0.20220120151853-ac864e57b117
 	github.com/google/uuid v1.3.0
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/magefile/mage v1.11.0
 	github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.3.0
 	github.com/thediveo/enumflag v0.10.0
 	github.com/wavesoftware/go-ensure v1.0.0
 	github.com/wavesoftware/go-magetasks v0.6.0
