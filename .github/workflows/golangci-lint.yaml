@@ -1,0 +1,20 @@
+name: GolangCI-Lint
+on:
+  push:
+    branches: [ 'release-*' ]
+  pull_request:
+jobs:
+  golangci:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: golangci_configuration
+        uses: andstor/file-existence-action@v1
+        with:
+          files: .golangci.yaml
+      - name: GolangCI Lint
+        if: steps.golangci_configuration.outputs.files_exists == 'true'
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.43
