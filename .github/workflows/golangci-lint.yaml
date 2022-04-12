@@ -8,13 +8,21 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.17.x
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
       - id: golangci_configuration
         uses: andstor/file-existence-action@v1
         with:
           files: .golangci.yaml
-      - name: GolangCI Lint
+
+      - name: Go Lint
         if: steps.golangci_configuration.outputs.files_exists == 'true'
-        uses: golangci/golangci-lint-action@v2
+        uses: golangci/golangci-lint-action@v3
         with:
           version: v1.43
