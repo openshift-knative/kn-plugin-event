@@ -1,0 +1,14 @@
+FROM docker.io/library/golang:1.17 AS builder
+
+COPY . /code
+WORKDIR /code
+
+RUN go build \
+  -o ./build/wathola-forwarder \
+  knative.dev/eventing/test/test_images/wathola-forwarder
+
+FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
+
+COPY --from=builder /code/build/wathola-forwarder /ko-app/wathola-forwarder
+
+ENTRYPOINT ["/ko-app/wathola-forwarder"]
