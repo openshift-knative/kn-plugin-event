@@ -6,3 +6,6 @@ FROM registry.ci.openshift.org/ocp/builder:rhel-8-golang-${GOLANG_VERSION}-opens
 
 COPY --from=tools /usr/bin/oc /usr/bin/
 RUN ln -s /usr/bin/oc /usr/bin/kubectl
+
+# Reset the goflags to avoid the -mod=vendor flag
+ENV GOFLAGS=
