@@ -30,11 +30,13 @@ fi
 
 if [ -z "${KN_PLUGIN_EVENT_EXECUTABLE:-}" ]; then
   echo '=== Building kn-event'
+  set -x
   go build -ldflags \
     "-X knative.dev/kn-plugin-event/pkg/metadata.Version=$(git describe --tags --dirty --always)
     -X knative.dev/kn-plugin-event/pkg/metadata.Image=${IMAGES_KN_EVENT_SENDER}" \
-    -o "${repodir}/build/_output/bin/kn-event-$(go env GOOS)-$(go env GOARCH)" \
+    -o "${ARTIFACTS}/bin/kn-event-$(go env GOOS)-$(go env GOARCH)" \
     "${repodir}/cmd/kn-event"
+  set +x
 fi
 
 echo '=== Running e2e tests'
