@@ -3,6 +3,7 @@ module knative.dev/kn-plugin-event/build
 go 1.20
 
 require (
+	github.com/magefile/mage v1.14.0
 	github.com/wavesoftware/go-magetasks v0.8.1
 	knative.dev/kn-plugin-event v0.0.0
 )
@@ -83,7 +84,6 @@ require (
 	github.com/klauspost/compress v1.16.6 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/letsencrypt/boulder v0.0.0-20221109233200-85aa52084eaf // indirect
-	github.com/magefile/mage v1.14.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
