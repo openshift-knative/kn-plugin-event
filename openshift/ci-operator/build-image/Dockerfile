@@ -1,5 +1,5 @@
-ARG OCP_VERSION=4.14
-ARG GOLANG_VERSION=1.20
+ARG OCP_VERSION=4.15
+ARG GOLANG_VERSION=1.21
 FROM registry.ci.openshift.org/ocp/${OCP_VERSION}:tools as tools
 
 FROM registry.ci.openshift.org/ocp/builder:rhel-8-golang-${GOLANG_VERSION}-openshift-${OCP_VERSION}
