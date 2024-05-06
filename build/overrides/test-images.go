@@ -6,10 +6,10 @@ import (
 	"path"
 
 	"github.com/magefile/mage/sh"
-	"github.com/wavesoftware/go-magetasks/config"
-	"github.com/wavesoftware/go-magetasks/pkg/artifact"
-	"github.com/wavesoftware/go-magetasks/pkg/ldflags"
-	"github.com/wavesoftware/go-magetasks/pkg/output/color"
+	"knative.dev/toolbox/magetasks/config"
+	"knative.dev/toolbox/magetasks/pkg/artifact"
+	"knative.dev/toolbox/magetasks/pkg/ldflags"
+	"knative.dev/toolbox/magetasks/pkg/output/color"
 )
 
 const prebuiltImageType = "🧩 test-content"
