@@ -8,6 +8,7 @@ export ARTIFACT_DIR="${ARTIFACT_DIR:-$(dirname "$(mktemp -d -u)")/build-${BUILD_
 export ARTIFACTS="${ARTIFACTS:-${ARTIFACT_DIR}}/kn-event/e2e-tests"
 mkdir -p "${ARTIFACTS}"
 
+# shellcheck disable=SC1090
 source "$(go run knative.dev/hack/cmd/script e2e-tests.sh)"
 
 set -Eeuo pipefail
@@ -30,9 +31,12 @@ fi
 
 if [ -z "${KN_PLUGIN_EVENT_EXECUTABLE:-}" ]; then
   echo '=== Building kn-event'
+  # TODO: Remove the IMAGES_KN_EVENT_SENDER reference once CI is updated to use
+  #       the new naming convention
+  readonly sender_image="${CLIENT_PLUGIN_EVENT_SENDER:-${IMAGES_KN_EVENT_SENDER}}"
   go build -ldflags \
     "-X knative.dev/kn-plugin-event/pkg/metadata.Version=$(git describe --tags --dirty --always)
-    -X knative.dev/kn-plugin-event/pkg/metadata.Image=${IMAGES_KN_EVENT_SENDER}" \
+    -X knative.dev/kn-plugin-event/pkg/metadata.Image=${sender_image}" \
     -o "${repodir}/build/_output/bin/kn-event-$(go env GOOS)-$(go env GOARCH)" \
     "${repodir}/cmd/kn-event"
 fi
