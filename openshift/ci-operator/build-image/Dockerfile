@@ -6,7 +6,7 @@ ARG OCP_VERSION
 
 # Install the oc and kubectl clients
 RUN curl -LO https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-preview/candidate-${OCP_VERSION}/openshift-client-linux-amd64-rhel8.tar.gz \
-    && tar -xzf openshift-client-linux.tar.gz \
+    && tar -xzf openshift-client-linux-amd64-rhel8.tar.gz \
     && chmod +x oc kubectl \
     && mv oc kubectl /usr/local/bin/
 
