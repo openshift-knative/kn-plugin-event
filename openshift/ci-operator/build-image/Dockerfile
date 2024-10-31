@@ -1,10 +1,26 @@
-FROM registry.ci.openshift.org/openshift/release:rhel-8-release-golang-1.22-openshift-4.17
+# DO NOT EDIT! Generated Dockerfile.
 
-# Install the oc and kubectl clients
-RUN curl -LO https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-preview/candidate-4.17/openshift-client-linux-amd64-rhel8.tar.gz \
-    && tar -xzf openshift-client-linux-amd64-rhel8.tar.gz \
-    && chmod +x oc kubectl \
-    && mv oc kubectl /usr/local/bin/
+FROM registry.ci.openshift.org/ocp/4.17:cli-artifacts as tools
 
-# Reset the goflags to avoid the -mod=vendor flag
-ENV GOFLAGS=''
+# Dockerfile to bootstrap build and test in openshift-ci
+FROM registry.ci.openshift.org/openshift/release:rhel-8-release-golang-1.22-openshift-4.17 as builder
+
+ARG TARGETARCH
+
+COPY --from=tools /usr/share/openshift/linux_$TARGETARCH/oc.rhel8 /usr/bin/oc
+
+RUN ln -s /usr/bin/oc /usr/bin/kubectl
+
+RUN yum install -y httpd-tools
+
+RUN wget https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && \
+    chmod 700 ./get-helm-3
+
+RUN ./get-helm-3 --version v3.11.3 --no-sudo && helm version
+
+RUN GOFLAGS='' go install github.com/mikefarah/yq/v3@latest
+RUN GOFLAGS='' go install -tags="exclude_graphdriver_btrfs containers_image_openpgp" github.com/containers/skopeo/cmd/skopeo@v1.16.1
+
+# go install creates $GOPATH/.cache with root permissions, we delete it here
+# to avoid permission issues with the runtime users
+RUN rm -rf $GOPATH/.cache
