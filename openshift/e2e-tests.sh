@@ -8,6 +8,9 @@ export ARTIFACT_DIR="${ARTIFACT_DIR:-$(dirname "$(mktemp -d -u)")/build-${BUILD_
 export ARTIFACTS="${ARTIFACTS:-${ARTIFACT_DIR}}/kn-event/e2e-tests"
 mkdir -p "${ARTIFACTS}"
 
+# Reset the goflags to avoid the -mod=vendor flag
+export GOFLAGS=''
+
 # shellcheck disable=SC1090
 source "$(go run knative.dev/hack/cmd/script e2e-tests.sh)"
 
