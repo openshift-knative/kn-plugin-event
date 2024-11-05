@@ -19,13 +19,8 @@ linters:
   disable:
     - paralleltest
     - nlreturn
-    - exhaustivestruct
     - wsl
     - godox
-    - scopelint
-    - maligned
-    - interfacer
-    - golint
     - ireturn
     - varnamelen
     - exhaustruct
@@ -44,4 +39,6 @@ linters-settings:
       - knative.dev/client/pkg/*
   gomoddirectives:
     # List of allowed `replace` directives. Default is empty.
-    replace-allow-list: []
+    # TODO: remove after https://github.com/openshift-knative/client/pull/504 is merged
+    replace-allow-list:
+      - knative.dev/client/pkg
