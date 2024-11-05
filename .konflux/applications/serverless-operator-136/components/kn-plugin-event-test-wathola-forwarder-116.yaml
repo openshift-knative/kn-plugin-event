@@ -1,0 +1,16 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+  name: kn-plugin-event-test-wathola-forwarder-116
+spec:
+  componentName: kn-plugin-event-test-wathola-forwarder-116
+  application: serverless-operator-136
+   
+  source:
+    git:
+      url: https://github.com/openshift-knative/kn-plugin-event.git
+      context: 
+      dockerfileUrl: openshift/ci-operator/test-images/wathola-forwarder/Dockerfile
+      revision: release-1.16
