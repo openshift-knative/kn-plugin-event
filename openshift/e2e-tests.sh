@@ -16,7 +16,8 @@ source "$(go run knative.dev/hack/cmd/script e2e-tests.sh)"
 
 set -Eeuo pipefail
 
-export KN_PLUGIN_EVENT_WATHOLA_HOMEDIR="${KN_PLUGIN_EVENT_WATHOLA_HOMEDIR:-}"
+# Default the Wathola home to "/" on Openshift (user ID: 65532)
+export KN_PLUGIN_EVENT_WATHOLA_HOMEDIR="${KN_PLUGIN_EVENT_WATHOLA_HOMEDIR:-/}"
 
 if [[ "${KN_PLUGIN_EVENT_INSTALL_SERVERLESS:-true}" == "true" ]]; then
   echo '=== Installing Serverless'
