@@ -5,6 +5,8 @@ PROW = $(shell [ "$(CI)" = "true" ] && [ "$(PROW_JOB_ID)" != "0" ] && echo "true
 ifeq ($(PROW),true)
 	export HOME = /tmp
 	export TEST_IMAGES_DIR = /usr/bin
+	# Reset the goflags to avoid the -mod=vendor flag
+	export GOFLAGS =
 endif
 
 build:
