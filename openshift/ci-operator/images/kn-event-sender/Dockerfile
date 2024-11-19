@@ -1,8 +1,10 @@
+# DO NOT EDIT! Generated Dockerfile for cmd/kn-event-sender (modified!!).
 ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-8-release-golang-1.22-openshift-4.17
 ARG GO_RUNTIME=registry.access.redhat.com/ubi8/ubi-minimal
 
 FROM $GO_BUILDER as builder
 
+WORKDIR /workspace
 COPY . .
 
 ENV CGO_ENABLED=1
@@ -17,6 +19,7 @@ FROM $GO_RUNTIME
 ARG VERSION=knative-v1.16
 
 COPY --from=builder /usr/bin/main /usr/bin/kn-event-sender
+COPY LICENSE /licenses/
 
 USER 65532
 
