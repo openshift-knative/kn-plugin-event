@@ -833,6 +833,8 @@ github.com/oleiade/reflections v1.0.1/go.mod h1:rdFxbxq4QXVZWj0F+e9jqjDkc7dbp97v
 github.com/open-policy-agent/opa v0.61.0 h1:nhncQ2CAYtQTV/SMBhDDPsCpCQsUW+zO/1j+T5V7oZg=
 github.com/open-policy-agent/opa v0.61.0/go.mod h1:7OUuzJnsS9yHf8lw0ApfcbrnaRG1EkN3J2fuuqi4G/E=
 github.com/opencontainers/image-spec v1.1.0-rc3/go.mod h1:X4pATf0uXsnn3g5aiGIsVnJBR4mxhKzfwmvK/B2NTm8=
+github.com/openshift-knative/client/pkg v0.0.0-20241206150025-71d4c285dd6a h1:Hu3jg7pzGcmgW8iJo+1DV4zjBFHTOo4WHr2VB2k0Nk0=
+github.com/openshift-knative/client/pkg v0.0.0-20241206150025-71d4c285dd6a/go.mod h1:A4G6AOnjrtDEPzj8ungJk2/3IWz9DMJZDbdSMkkQLEQ=
 github.com/opentracing/opentracing-go v1.2.0 h1:uEJPy/1a5RIPAJ0Ov+OIO8OxWu77jEv+1B0VhjKrZUs=
 github.com/opentracing/opentracing-go v1.2.0/go.mod h1:GxEUsuufX4nBwe+T+Wl9TAgYrxe9dPLANfrWvHYVTgc=
 github.com/orangecms/go-framebuffer v0.0.0-20200613202404-a0700d90c330 h1:zJBTzBuTR7EdFzmCGx0xp0pbOOb82sAh0+YUK4JTDEI=
@@ -1308,6 +1310,8 @@ k8s.io/kms v0.30.3/go.mod h1:GrMurD0qk3G4yNgGcsCEmepqf9KyyIrTXYR2lyUOJC4=
 knative.dev/caching v0.0.0-20241022012359-41bbaf964d16 h1:vQ0y0mO1ALdOd/FPiw7gf1415mf41aWnLOVOtTr2/jQ=
 knative.dev/caching v0.0.0-20241022012359-41bbaf964d16/go.mod h1:qOvjasSUI+GyF4hsqJmIomblcgjkLzJhng8/zk0B9J4=
 knative.dev/client-pkg v0.0.0-20240808015000-22f598931483/go.mod h1:Y56KfZx3gJJpju88l86jQ9csxywLiopR0GkxCWW3+Kg=
+knative.dev/client/pkg v0.0.0-20241016014431-dbb49e603ce2 h1:RjuhdklDowLODd2cWDbTU5PU1182ik5MEw4DP5pvhWs=
+knative.dev/client/pkg v0.0.0-20241016014431-dbb49e603ce2/go.mod h1:JR3XomuVf2cBqgvXFONkX6Ebf1/gJwUnl/1OH47U18g=
 knative.dev/hack/schema v0.0.0-20241010131451-05b2fb30cb4d h1:N+UlBE8F8LJUh/m6cYSwzqdqNg65BD9jbWoWO9nfqEA=
 knative.dev/hack/schema v0.0.0-20241010131451-05b2fb30cb4d/go.mod h1:jRH/sx6mwwuMVhvJgnzSaoYA1N4qaIkJa+zxEGtVA5I=
 mvdan.cc/sh/v3 v3.7.0 h1:lSTjdP/1xsddtaKfGg7Myu7DnlHItd3/M2tomOcNNBg=

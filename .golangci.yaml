@@ -39,6 +39,6 @@ linters-settings:
       - knative.dev/client/pkg/*
   gomoddirectives:
     # List of allowed `replace` directives. Default is empty.
-    # TODO: remove after https://github.com/openshift-knative/client/pull/504 is merged
+    # Ref.: https://github.com/openshift-knative/client/tree/release-v1.16
     replace-allow-list:
       - knative.dev/client/pkg
