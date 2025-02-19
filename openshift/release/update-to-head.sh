@@ -7,5 +7,5 @@ project_dir="$(realpath "$(dirname "${BASH_SOURCE[0]:-$0}")/../..")"
 cd "$project_dir/openshift"
 
 exec go run \
-  github.com/cardil/deviate/cmd/deviate \
+  github.com/openshift-knative/deviate/cmd/deviate@latest \
   sync --config "${project_dir}/.deviate.yaml"
