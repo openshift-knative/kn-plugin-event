@@ -3,3 +3,11 @@ tags:
   synchronize: true
 resyncReleases:
   enabled: true
+dockerfileGen:
+  dockerfiles-dir: ci-operator/images
+  dockerfiles-test-dir: ci-operator/test-images
+  additional-build-env:
+    # Reset the goflags to avoid the -mod=vendor flag
+    - "ENV GOFLAGS=''"
+  images-from:
+    - eventing
