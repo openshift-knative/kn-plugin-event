@@ -1,10 +1,12 @@
 module knative.dev/kn-plugin-event/build
 
-go 1.22.0
+go 1.22.7
+
+toolchain go1.22.9
 
 require (
 	knative.dev/kn-plugin-event v0.0.0
-	knative.dev/toolbox/magetasks v0.0.0-20240412084849-703489d35306
+	knative.dev/toolbox/magetasks v0.0.0-20250129111155-bc7e152e723f
 )
 
 require (
