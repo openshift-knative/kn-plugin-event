@@ -1,0 +1,17 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    build.appstudio.openshift.io/pipeline: '{"name":"docker-build","bundle":"latest"}'
+    build.appstudio.openshift.io/request: configure-pac-no-mr
+  name: kn-plugin-event-test-eventshub-117
+spec:
+  componentName: kn-plugin-event-test-eventshub-117
+  application: serverless-operator-137
+   
+  source:
+    git:
+      url: https://github.com/openshift-knative/kn-plugin-event.git
+      context: 
+      dockerfileUrl: openshift/ci-operator/test-images/eventshub/Dockerfile
+      revision: release-1.17
