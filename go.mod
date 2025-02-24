@@ -12,15 +12,15 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.8.0
 	github.com/stretchr/testify v1.9.0
-	github.com/thediveo/enumflag v0.10.0
+	github.com/thediveo/enumflag v0.10.1
 	github.com/wavesoftware/go-commandline v1.0.0
 	github.com/wavesoftware/go-ensure v1.0.0
 	go.uber.org/zap v1.27.0
 	gopkg.in/yaml.v2 v2.4.0
-	gotest.tools/v3 v3.5.1
-	k8s.io/api v0.29.3
-	k8s.io/apimachinery v0.29.3
-	k8s.io/client-go v0.29.2
+	gotest.tools/v3 v3.5.2
+	k8s.io/api v0.29.14
+	k8s.io/apimachinery v0.29.14
+	k8s.io/client-go v0.29.14
 	knative.dev/client-pkg v0.0.0-20240724091446-8393d69ad672
 	knative.dev/eventing v0.42.0
 	knative.dev/hack v0.0.0-20240704013904-b9799599afcf
