@@ -20,9 +20,9 @@ require (
 	go.uber.org/zap v1.27.0
 	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools/v3 v3.5.1
-	k8s.io/api v0.30.3
-	k8s.io/apimachinery v0.30.3
-	k8s.io/client-go v0.30.3
+	k8s.io/api v0.30.10
+	k8s.io/apimachinery v0.30.10
+	k8s.io/client-go v0.30.10
 	knative.dev/client/pkg v0.0.0-20241016014431-dbb49e603ce2
 	knative.dev/eventing v0.42.1-0.20241016013536-6aa49dc1db88
 	knative.dev/hack v0.0.0-20241010131451-05b2fb30cb4d
