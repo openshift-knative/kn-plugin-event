@@ -9,11 +9,6 @@ spec:
   componentName: kn-plugin-event-sender-115
   application: serverless-operator-135
    
-  build-nudges-ref:
-    
-    - "serverless-bundle-135"
-    
-  
   source:
     git:
       url: https://github.com/openshift-knative/kn-plugin-event.git
