@@ -4,7 +4,7 @@ set -Eeuo pipefail
 
 project_dir="$(realpath "$(dirname "${BASH_SOURCE[0]:-$0}")/../..")"
 
-cd "$project_dir/openshift"
+cd "$project_dir"
 
 exec go run \
   github.com/openshift-knative/deviate/cmd/deviate@main \
