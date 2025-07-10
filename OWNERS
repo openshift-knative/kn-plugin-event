@@ -2,14 +2,17 @@
 
 approvers:
 - dsimansk
-- mgencur
 - cardil
+- creydr
+- maschmid
 - openshift-cherrypick-robot
 
 reviewers:
 - dsimansk
-- mgencur
 - cardil
+- creydr
+- maschmid
+- mvinkler
 - jrangelramos
-- lkingland
-- matejvasek
+- rudyredhat1
+- Kaustubh-pande
