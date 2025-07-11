@@ -40,6 +40,12 @@ if [ -z "${KN_PLUGIN_EVENT_EXECUTABLE:-}" ]; then
 fi
 
 echo '=== Running e2e tests'
-go_test_e2e -timeout 10m ./test/... || fail_test 'kn-event e2e tests'
+go_test_e2e -timeout 10m \
+  ./test/pkg/... \
+  ./test/images/... \
+  || fail_test 'kn-event e2e tests'
+go_test_e2e -timeout 10m ./test/e2e/... \
+  --images.producer.file="${REPO_ROOT_DIR}/openshift/images.yaml" \
+  || fail_test 'kn-event e2e tests'
 
 success
