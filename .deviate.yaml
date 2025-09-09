@@ -8,6 +8,6 @@ dockerfileGen:
   dockerfiles-test-dir: ci-operator/test-images
   additional-build-env:
     # Reset the goflags to avoid the -mod=vendor flag
-    - "ENV GOFLAGS=''"
+    - "GOFLAGS=''"
   images-from:
     - eventing
