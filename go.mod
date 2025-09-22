@@ -3,7 +3,7 @@ module knative.dev/kn-plugin-event
 go 1.24.0
 
 require (
-	github.com/cloudevents/sdk-go/v2 v2.16.1
+	github.com/cloudevents/sdk-go/v2 v2.16.2
 	github.com/fatih/color v1.18.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/gobuffalo/flect v1.0.3
