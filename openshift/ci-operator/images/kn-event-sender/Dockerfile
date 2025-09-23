@@ -24,13 +24,14 @@ USER 65532
 
 LABEL \
       com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-sender-rhel8-container" \
-      name="openshift-serverless-1/kn-plugin-event-kn-event-sender-rhel8" \
+      name="openshift-serverless-1/kn-plugin-event-sender-rhel8" \
       version=$VERSION \
       summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       maintainer="serverless-support@redhat.com" \
       description="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Kn Event Sender" \
-      io.openshift.tags="kn-event-sender"
+      io.openshift.tags="kn-event-sender" \
+      cpe="cpe:/a:redhat:openshift_serverless:1.36::el8"
 
 ENTRYPOINT ["/usr/bin/kn-event-sender"]
