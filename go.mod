@@ -27,7 +27,7 @@ require (
 	knative.dev/pkg v0.0.0-20240716082220-4355f0c73608
 	knative.dev/reconciler-test v0.0.0-20240716134925-00d94f40c470
 	knative.dev/serving v0.42.0
-	sigs.k8s.io/yaml v1.4.0
+	sigs.k8s.io/yaml v1.6.0
 )
 
 require (
@@ -112,6 +112,7 @@ require (
 	go.starlark.net v0.0.0-20230525235612-a134d8f9ddca // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
+	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	golang.org/x/exp v0.0.0-20240325151524-a685a6edb6d8 // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/oauth2 v0.21.0 // indirect
