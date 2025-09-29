@@ -29,7 +29,7 @@ require (
 	knative.dev/pkg v0.0.0-20241021183759-9b9d535af5ad
 	knative.dev/reconciler-test v0.0.0-20241015093232-09111f0f1364
 	knative.dev/serving v0.42.1-0.20241021145327-c93d8c49a1b7
-	sigs.k8s.io/yaml v1.4.0
+	sigs.k8s.io/yaml v1.6.0
 )
 
 require (
@@ -59,7 +59,6 @@ require (
 	github.com/go-openapi/jsonreference v0.21.0 // indirect
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
@@ -113,6 +112,7 @@ require (
 	go.starlark.net v0.0.0-20230525235612-a134d8f9ddca // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
+	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa // indirect
 	golang.org/x/net v0.30.0 // indirect
 	golang.org/x/oauth2 v0.22.0 // indirect
