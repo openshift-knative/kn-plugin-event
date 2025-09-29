@@ -4,7 +4,7 @@ go 1.22.7
 
 require (
 	github.com/cloudevents/sdk-go/v2 v2.15.2
-	github.com/fatih/color v1.16.0
+	github.com/fatih/color v1.18.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/gobuffalo/flect v1.0.3
 	github.com/google/go-containerregistry v0.19.1
