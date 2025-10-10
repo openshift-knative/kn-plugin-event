@@ -1,6 +1,6 @@
 # DO NOT EDIT! Generated Dockerfile for cmd/kn-event.
-ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-8-release-golang-1.22-openshift-4.17
-ARG GO_RUNTIME=registry.access.redhat.com/ubi8/ubi-minimal
+ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-9-release-golang-1.22-openshift-4.17
+ARG GO_RUNTIME=registry.access.redhat.com/ubi9/ubi-minimal
 
 FROM $GO_BUILDER as builder
 
@@ -9,7 +9,7 @@ COPY . .
 
 ENV CGO_ENABLED=1
 ENV GOEXPERIMENT=strictfipsruntime
-ENV GOFLAGS=''
+ENV GOFLAGS='-mod=mod'
 
 RUN go build -tags strictfipsruntime -o /usr/bin/main ./cmd/kn-event
 
@@ -31,6 +31,7 @@ LABEL \
       description="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Kn Event" \
-      io.openshift.tags="kn-event"
+      io.openshift.tags="kn-event" \
+      cpe="cpe:/a:redhat:openshift_serverless:1.37::el9"
 
 ENTRYPOINT ["/usr/bin/kn-event"]

@@ -33,5 +33,5 @@ dockerfiles:
 		--root-dir "$(current_dir)" \
 		--generators dockerfile \
 		--app-file-fmt "/usr/bin/%s" \
-		--dockerfile-image-builder-fmt "registry.ci.openshift.org/openshift/release:rhel-8-release-golang-%s-openshift-4.17"
+		--dockerfile-image-builder-fmt "registry.ci.openshift.org/openshift/release:rhel-9-release-golang-%s-openshift-4.17"
 .PHONY: dockerfiles
