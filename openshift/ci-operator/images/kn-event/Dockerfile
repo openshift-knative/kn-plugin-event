@@ -9,6 +9,7 @@ COPY . .
 
 ENV CGO_ENABLED=1
 ENV GOEXPERIMENT=strictfipsruntime
+ENV GOFLAGS='-mod=mod'
 ENV GOFLAGS=''
 
 RUN go build -tags strictfipsruntime -o /usr/bin/main ./cmd/kn-event
@@ -23,8 +24,8 @@ COPY LICENSE /licenses/
 USER 65532
 
 LABEL \
-      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-rhel8-container" \
-      name="openshift-serverless-1/kn-plugin-event-kn-event-rhel8" \
+      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-rhel9-container" \
+      name="openshift-serverless-1/kn-plugin-event-kn-event-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       maintainer="serverless-support@redhat.com" \
