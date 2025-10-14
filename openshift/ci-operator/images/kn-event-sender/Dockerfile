@@ -9,6 +9,7 @@ COPY . .
 
 ENV CGO_ENABLED=1
 ENV GOEXPERIMENT=strictfipsruntime
+ENV GOFLAGS='-mod=mod'
 ENV GOFLAGS=''
 
 RUN go build -tags strictfipsruntime -o /usr/bin/main ./cmd/kn-event-sender
@@ -23,14 +24,14 @@ COPY LICENSE /licenses/
 USER 65532
 
 LABEL \
-      com.redhat.component="openshift-serverless-1-kn-plugin-event-sender-rhel9-container" \
-      name="openshift-serverless-1/kn-plugin-event-sender-rhel9" \
+      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-sender-rhel9-container" \
+      name="openshift-serverless-1/kn-plugin-event-kn-event-sender-rhel9" \
       version=$VERSION \
-      summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Sender" \
+      summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       maintainer="serverless-support@redhat.com" \
-      description="Red Hat OpenShift Serverless 1 Kn Plugin Event Sender" \
-      io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Sender" \
-      io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Sender" \
+      description="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
+      io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
+      io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Kn Event Sender" \
       io.openshift.tags="kn-event-sender" \
       cpe="cpe:/a:redhat:openshift_serverless:1.37::el9"
 
