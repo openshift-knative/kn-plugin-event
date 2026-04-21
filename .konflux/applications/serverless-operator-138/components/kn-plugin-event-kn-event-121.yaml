@@ -7,8 +7,7 @@ metadata:
   name: kn-plugin-event-kn-event-121
 spec:
   componentName: kn-plugin-event-kn-event-121
-  application: serverless-operator-138
-   
+  application: serverless-operator-138 
   source:
     git:
       url: https://github.com/openshift-knative/kn-plugin-event.git
