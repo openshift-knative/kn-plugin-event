@@ -3,7 +3,7 @@ module knative.dev/kn-plugin-event
 go 1.24.2
 
 require (
-	github.com/cloudevents/sdk-go/v2 v2.16.1
+	github.com/cloudevents/sdk-go/v2 v2.16.2
 	github.com/fatih/color v1.18.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/gobuffalo/flect v1.0.3
@@ -16,15 +16,15 @@ require (
 	github.com/spf13/pflag v1.0.10
 	github.com/spf13/viper v1.21.0
 	github.com/stretchr/testify v1.11.1
-	github.com/thediveo/enumflag v0.10.0
+	github.com/thediveo/enumflag v0.10.1
 	github.com/wavesoftware/go-commandline v1.3.0
 	github.com/wavesoftware/go-ensure v1.0.0
 	go.uber.org/zap v1.27.1
 	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools/v3 v3.5.2
-	k8s.io/api v0.34.3
-	k8s.io/apimachinery v0.34.3
-	k8s.io/client-go v0.34.3
+	k8s.io/api v0.34.7
+	k8s.io/apimachinery v0.34.7
+	k8s.io/client-go v0.34.7
 	knative.dev/client/pkg v0.0.0-20260128022831-382000a93f17
 	knative.dev/eventing v0.48.0
 	knative.dev/hack v0.0.0-20260120115810-bf6758cba446
