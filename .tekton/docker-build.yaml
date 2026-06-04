@@ -108,10 +108,6 @@ spec:
       VMs
     name: privileged-nested
     type: string
-  - name: sast-target-dirs
-    type: string
-    default: .
-    description: Target directories to scan with SAST tools. Multiple values should be separated with commas.
   results:
   - description: ""
     name: IMAGE_URL
@@ -140,8 +136,6 @@ spec:
       value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
     - name: CACHI2_ARTIFACT
       value: $(tasks.prefetch-dependencies.results.CACHI2_ARTIFACT)
-    - name: TARGET_DIRS
-      value: $(params.sast-target-dirs)
     runAfter:
     - build-image-index
     taskRef:
@@ -458,8 +452,6 @@ spec:
       value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
     - name: CACHI2_ARTIFACT
       value: $(tasks.prefetch-dependencies.results.CACHI2_ARTIFACT)
-    - name: TARGET_DIRS
-      value: $(params.sast-target-dirs)
     runAfter:
     - build-image-index
     taskRef:
@@ -488,8 +480,6 @@ spec:
       value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
     - name: CACHI2_ARTIFACT
       value: $(tasks.prefetch-dependencies.results.CACHI2_ARTIFACT)
-    - name: TARGET_DIRS
-      value: $(params.sast-target-dirs)
     runAfter:
     - build-image-index
     taskRef:
