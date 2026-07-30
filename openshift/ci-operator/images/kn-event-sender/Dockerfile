@@ -1,5 +1,5 @@
 # DO NOT EDIT! Generated Dockerfile for cmd/kn-event-sender.
-ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-9-release-golang-1.25-openshift-4.21
+ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-9-release-golang-1.25-openshift-4.20
 ARG GO_RUNTIME=registry.access.redhat.com/ubi9/ubi-minimal
 
 FROM $GO_BUILDER as builder
@@ -9,6 +9,7 @@ COPY . .
 
 ENV CGO_ENABLED=1
 ENV GOEXPERIMENT=strictfipsruntime
+ENV GOFLAGS='-mod=mod'
 ENV GOFLAGS=''
 
 RUN go build -tags strictfipsruntime -o /usr/bin/main ./cmd/kn-event-sender
@@ -34,6 +35,6 @@ LABEL \
       io.openshift.tags="kn-event-sender" \
       vendor="Red Hat, Inc." \
       release=$VERSION \
-      cpe="cpe:/a:redhat:openshift_serverless:1.38::el9"
+      cpe="cpe:/a:redhat:openshift_serverless:1.41::el9"
 
 ENTRYPOINT ["/usr/bin/kn-event-sender"]
