@@ -32,6 +32,5 @@ dockerfiles:
 	go run github.com/openshift-knative/hack/cmd/generate@latest \
 		--root-dir "$(current_dir)" \
 		--generators dockerfile \
-		--app-file-fmt "/usr/bin/%s" \
-		--dockerfile-image-builder-fmt "registry.ci.openshift.org/openshift/release:rhel-9-release-golang-%s-openshift-4.17"
+		--app-file-fmt "/usr/bin/%s"
 .PHONY: dockerfiles
